@@ -1,8 +1,14 @@
 .cards-wrapper{
-    
     .cards{
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-gap: 20px;
         align-items: stretch;
+    }
+}
+
+@media (max-width: 991px) {
+    .cards-wrapper {
+        max-height: 300px;
+        overflow-y: auto;
     }
 }
