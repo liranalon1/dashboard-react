@@ -2,6 +2,7 @@ import './App.scss'
 import { useState } from 'react'
 import { useEffect } from 'react';
 import { callAPI } from "@/services";
+import { checkIfArray } from "@/helpers";
 import Cards from "@/components/Cards/Cards";
 import TopCards from "@/components/TopCards/TopCards";
 
@@ -21,7 +22,8 @@ function App() {
     })
     .then((res) => {
         if(res.status === 200){
-          setData(res.data);
+          checkIfArray(res.data.data);
+          setData(res.data.data);
         }else{
             console.log(res);
             if(res.status === 401){
@@ -34,12 +36,11 @@ function App() {
   return (
     <>
     <div className="container">
-      <h2 className="list-title">{data.title}</h2>
       {
-        Object.keys(data).length ?
+        data.length ?
           <div className="innerWrap flex">
-            <TopCards items={data.data} />
-            <Cards items={data.data} />
+            <TopCards items={data} />
+            <Cards items={data} />
           </div>
         : null
       }
