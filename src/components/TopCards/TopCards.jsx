@@ -8,6 +8,7 @@ import { CategoryScale } from "chart.js";
 import LineChart from "@/components/LineChart/LineChart";
 
 Chart.register(CategoryScale);
+Chart.defaults.color = '#fff';
 
 export default function TopCards({items}) {
     const [chartData, setChartData] = useState({
