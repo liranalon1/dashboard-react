@@ -10,10 +10,10 @@ function App() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    getUsersTopArtists();
+    getData();
   }, []);
 
-  function getUsersTopArtists(){
+  function getData(){
     callAPI({
         url: `sample.json`, 
         params: {
