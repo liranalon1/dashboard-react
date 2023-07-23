@@ -47,22 +47,24 @@ export default function TopCards({items}) {
             <div className="card">
                 <LineChart chartData={chartData} />
             </div>
-            <div className="card flex center">
-                <div className="total-wrap flex">
-                    <span>{numberWithCommas(totalImpressions)}</span>
-                    <h4>Total Impressions</h4>
+            <div className="total-wrap grid">
+                <div className="card flex center">
+                    <div className="total-wrap-inner flex">
+                        <span>{numberWithCommas(totalImpressions)}</span>
+                        <h4>Total Impressions</h4>
+                    </div>
                 </div>
-            </div>
-            <div className="card flex center">
-                <div className="total-wrap flex">
-                    <span>{numberWithCommas(totalClicks)}</span>
-                    <h4>Total Clicks</h4>
+                <div className="card flex center">
+                    <div className="total-wrap-inner flex">
+                        <span>{numberWithCommas(totalClicks)}</span>
+                        <h4>Total Clicks</h4>
+                    </div>
                 </div>
-            </div>
-            <div className="card flex center">
-                <div className="total-wrap flex">
-                    <span>${numberWithCommas(totalCost)}</span>
-                    <h4>Total Cost</h4>
+                <div className="card flex center">
+                    <div className="total-wrap-inner flex">
+                        <span>${numberWithCommas(totalCost)}</span>
+                        <h4>Total Cost</h4>
+                    </div>
                 </div>
             </div>
         </div>

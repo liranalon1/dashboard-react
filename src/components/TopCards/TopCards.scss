@@ -1,5 +1,5 @@
 .top-cards {
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-gap: 20px;
 
     .center {
@@ -8,10 +8,14 @@
     }
 
     .total-wrap{
-        gap: 5px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        gap: 20px;
+
+        .total-wrap-inner {
+            gap: 5px;
+            flex-direction: column;
+            text-align: center;
+        }
+        
         span {
             font-size: 24px;
         }
