@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import { callAPI } from "@/services";
 import Cards from "@/components/Cards/Cards";
-import Total from "@/components/Total/Total";
+import TopCards from "@/components/TopCards/TopCards";
 
 function App() {
   const [data, setData] = useState({});
@@ -22,11 +22,10 @@ function App() {
     .then((res) => {
         if(res.status === 200){
           setData(res.data);
-          // setLoading(false);
         }else{
             console.log(res);
             if(res.status === 401){
-                //
+                console.error(res);
             }
         }
     });
@@ -39,7 +38,7 @@ function App() {
       {
         Object.keys(data).length ?
           <div className="innerWrap flex">
-            <Total items={data.data} />
+            <TopCards items={data.data} />
             <Cards items={data.data} />
           </div>
         : null
